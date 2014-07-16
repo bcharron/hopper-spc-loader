@@ -1,0 +1,275 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85A92429197630F6008F3BDA /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A92428197630F6008F3BDA /* CoreFoundation.framework */; };
+		85A9242F197630F6008F3BDA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85A9242D197630F6008F3BDA /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		85A92425197630F6008F3BDA /* SPCLoader.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPCLoader.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		85A92428197630F6008F3BDA /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		85A9242C197630F6008F3BDA /* SPCLoader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SPCLoader-Info.plist"; sourceTree = "<group>"; };
+		85A9242E197630F6008F3BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		85A92430197630F6008F3BDA /* SPCLoader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SPCLoader-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85A92422197630F6008F3BDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85A92429197630F6008F3BDA /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85A9241C197630F6008F3BDA = {
+			isa = PBXGroup;
+			children = (
+				85A9242A197630F6008F3BDA /* SPCLoader */,
+				85A92427197630F6008F3BDA /* Frameworks */,
+				85A92426197630F6008F3BDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85A92426197630F6008F3BDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85A92425197630F6008F3BDA /* SPCLoader.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85A92427197630F6008F3BDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85A92428197630F6008F3BDA /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85A9242A197630F6008F3BDA /* SPCLoader */ = {
+			isa = PBXGroup;
+			children = (
+				85A9242B197630F6008F3BDA /* Supporting Files */,
+			);
+			path = SPCLoader;
+			sourceTree = "<group>";
+		};
+		85A9242B197630F6008F3BDA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85A9242C197630F6008F3BDA /* SPCLoader-Info.plist */,
+				85A9242D197630F6008F3BDA /* InfoPlist.strings */,
+				85A92430197630F6008F3BDA /* SPCLoader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85A92424197630F6008F3BDA /* SPCLoader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85A92433197630F6008F3BDA /* Build configuration list for PBXNativeTarget "SPCLoader" */;
+			buildPhases = (
+				85A92421197630F6008F3BDA /* Sources */,
+				85A92422197630F6008F3BDA /* Frameworks */,
+				85A92423197630F6008F3BDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SPCLoader;
+			productName = SPCLoader;
+			productReference = 85A92425197630F6008F3BDA /* SPCLoader.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85A9241D197630F6008F3BDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Benjamin Charron";
+			};
+			buildConfigurationList = 85A92420197630F6008F3BDA /* Build configuration list for PBXProject "SPCLoader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 85A9241C197630F6008F3BDA;
+			productRefGroup = 85A92426197630F6008F3BDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85A92424197630F6008F3BDA /* SPCLoader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85A92423197630F6008F3BDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85A9242F197630F6008F3BDA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85A92421197630F6008F3BDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		85A9242D197630F6008F3BDA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85A9242E197630F6008F3BDA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85A92431197630F6008F3BDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		85A92432197630F6008F3BDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		85A92434197630F6008F3BDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SPCLoader/SPCLoader-Prefix.pch";
+				INFOPLIST_FILE = "SPCLoader/SPCLoader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		85A92435197630F6008F3BDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SPCLoader/SPCLoader-Prefix.pch";
+				INFOPLIST_FILE = "SPCLoader/SPCLoader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85A92420197630F6008F3BDA /* Build configuration list for PBXProject "SPCLoader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85A92431197630F6008F3BDA /* Debug */,
+				85A92432197630F6008F3BDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85A92433197630F6008F3BDA /* Build configuration list for PBXNativeTarget "SPCLoader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85A92434197630F6008F3BDA /* Debug */,
+				85A92435197630F6008F3BDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85A9241D197630F6008F3BDA /* Project object */;
+}
