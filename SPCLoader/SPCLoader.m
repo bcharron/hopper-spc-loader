@@ -11,6 +11,7 @@
 #define SPC_MAGIC "SNES-SPC700 Sound File Data"
 #define SPC_DATA_OFFSET 0x0100
 #define SPC_VERSION_OFFSET 0x0024
+#define SPC_IPL_ROM_OFFSET 0xFFC0
 
 @implementation SPCLoader {
         NSObject<HPHopperServices> *_services;
@@ -97,20 +98,54 @@
     
     uint16_t pc = OSReadLittleInt16(bytes, 0x25);
 
-    [file addEntryPoint:pc];
-    
     NSObject<HPSegment> *segment = [file addSegmentAt:0x0000 size:0x10000];
-    segment.segmentName = @"RAM";
+    segment.segmentName = @"Memory";
     
     NSData *segmentData = [NSData dataWithBytes:&bytes[SPC_DATA_OFFSET] length:0x10000];
 
     segment.mappedData = segmentData;
     segment.fileOffset = SPC_DATA_OFFSET;
     segment.fileLength = 0x10000;
+
+    NSObject<HPSection> *page0_section = [segment addSectionAt:0x0000 size:0x00F0];
+    page0_section.sectionName = @"Page 0";
+    page0_section.containsCode = NO;
+
+    NSObject<HPSection> *registers_section = [segment addSectionAt:0x00F0 size:0x0010];
+    registers_section.sectionName = @"Registers";
+    registers_section.containsCode = NO;
     
-    NSObject<HPSection> *section = [segment addSectionAt:0x0000 size:0x10000];
-    section.sectionName = @"RAM";
-    section.containsCode = YES;
+    NSObject<HPSection> *page1_section = [segment addSectionAt:0x0100 size:0x0100];
+    page1_section.sectionName = @"Page 1";
+    page1_section.containsCode = NO;
+    
+    NSObject<HPSection> *ram_section = [segment addSectionAt:0x0200 size:0xFFBF - 0x200 + 1];
+    ram_section.sectionName = @"RAM";
+    ram_section.containsCode = YES;
+
+    NSObject<HPSection> *ipl_section = [segment addSectionAt:0xFFC0 size:0xFFFF - 0xFFC0 + 1];
+    ipl_section.sectionName = @"IPL_ROM";
+    ipl_section.containsCode = YES;
+    ipl_section.pureCodeSection = YES;
+    
+    [file setName:@"CTRLREG" forVirtualAddress:0x00F1];
+    [file setName:@"DSPRegisterAddress" forVirtualAddress:0x00F2];
+    [file setName:@"DSPRegisterData" forVirtualAddress:0x00F3];
+    [file setName:@"PORT0" forVirtualAddress:0x00F4];
+    [file setName:@"PORT1" forVirtualAddress:0x00F5];
+    [file setName:@"PORT2" forVirtualAddress:0x00F6];
+    [file setName:@"PORT3" forVirtualAddress:0x00F7];
+    [file setName:@"TIMER0" forVirtualAddress:0x00FA];
+    [file setName:@"TIMER1" forVirtualAddress:0x00FB];
+    [file setName:@"TIMER2" forVirtualAddress:0x00FC];
+    [file setName:@"COUNTER0" forVirtualAddress:0x00FD];
+    [file setName:@"COUNTER1" forVirtualAddress:0x00FE];
+    [file setName:@"COUNTER2" forVirtualAddress:0x00FF];
+    [file setName:@"IPL_ROM" forVirtualAddress:0xFFC0];
+
+    // Entry points / procedures
+    [file addEntryPoint:pc];
+    [file addPotentialProcedure:SPC_IPL_ROM_OFFSET];
 
     return(DIS_OK);
 }
