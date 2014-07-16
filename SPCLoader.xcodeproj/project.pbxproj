@@ -9,14 +9,31 @@
 /* Begin PBXBuildFile section */
 		85A92429197630F6008F3BDA /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A92428197630F6008F3BDA /* CoreFoundation.framework */; };
 		85A9242F197630F6008F3BDA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85A9242D197630F6008F3BDA /* InfoPlist.strings */; };
+		85A92438197631DA008F3BDA /* SPCLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A92437197631DA008F3BDA /* SPCLoader.m */; };
+		85A9243A19763923008F3BDA /* SPCLoader.hopperLoader in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85A92425197630F6008F3BDA /* SPCLoader.hopperLoader */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		85A924391976391F008F3BDA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(HOME)/Library/Application Support/Hopper/PlugIns/Loaders";
+			dstSubfolderSpec = 0;
+			files = (
+				85A9243A19763923008F3BDA /* SPCLoader.hopperLoader in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		85A92425197630F6008F3BDA /* SPCLoader.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPCLoader.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		85A92425197630F6008F3BDA /* SPCLoader.hopperLoader */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPCLoader.hopperLoader; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A92428197630F6008F3BDA /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		85A9242C197630F6008F3BDA /* SPCLoader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SPCLoader-Info.plist"; sourceTree = "<group>"; };
 		85A9242E197630F6008F3BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		85A92430197630F6008F3BDA /* SPCLoader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SPCLoader-Prefix.pch"; sourceTree = "<group>"; };
+		85A92436197631DA008F3BDA /* SPCLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCLoader.h; sourceTree = "<group>"; };
+		85A92437197631DA008F3BDA /* SPCLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +60,7 @@
 		85A92426197630F6008F3BDA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85A92425197630F6008F3BDA /* SPCLoader.bundle */,
+				85A92425197630F6008F3BDA /* SPCLoader.hopperLoader */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				85A9242B197630F6008F3BDA /* Supporting Files */,
+				85A92436197631DA008F3BDA /* SPCLoader.h */,
+				85A92437197631DA008F3BDA /* SPCLoader.m */,
 			);
 			path = SPCLoader;
 			sourceTree = "<group>";
@@ -84,6 +103,7 @@
 				85A92421197630F6008F3BDA /* Sources */,
 				85A92422197630F6008F3BDA /* Frameworks */,
 				85A92423197630F6008F3BDA /* Resources */,
+				85A924391976391F008F3BDA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -91,7 +111,7 @@
 			);
 			name = SPCLoader;
 			productName = SPCLoader;
-			productReference = 85A92425197630F6008F3BDA /* SPCLoader.bundle */;
+			productReference = 85A92425197630F6008F3BDA /* SPCLoader.hopperLoader */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -136,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A92438197631DA008F3BDA /* SPCLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,12 +248,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SPCLoader/SPCLoader-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../include,
+				);
 				INFOPLIST_FILE = "SPCLoader/SPCLoader-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Application Support/Hopper/PlugIns/Loaders";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = hopperLoader;
 			};
 			name = Debug;
 		};
@@ -240,12 +267,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SPCLoader/SPCLoader-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../include,
+				);
 				INFOPLIST_FILE = "SPCLoader/SPCLoader-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Application Support/Hopper/PlugIns/Loaders";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = hopperLoader;
 			};
 			name = Release;
 		};
