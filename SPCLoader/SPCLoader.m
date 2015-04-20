@@ -41,7 +41,7 @@
     return self;
 }
 
-- (UUID *)pluginUUID {
+- (HopperUUID *)pluginUUID {
     return([_services UUIDWithString:@"4f111350-0c9f-11e4-9191-0800200c9a66"]);
 }
 
@@ -145,26 +145,30 @@
     ipl_section.containsCode = YES;
     ipl_section.pureCodeSection = YES;
     
-    [file setName:@"CTRLREG" forVirtualAddress:0x00F1];
-    [file setName:@"DSPRegisterAddress" forVirtualAddress:0x00F2];
-    [file setName:@"DSPRegisterData" forVirtualAddress:0x00F3];
-    [file setName:@"PORT0" forVirtualAddress:0x00F4];
-    [file setName:@"PORT1" forVirtualAddress:0x00F5];
-    [file setName:@"PORT2" forVirtualAddress:0x00F6];
-    [file setName:@"PORT3" forVirtualAddress:0x00F7];
-    [file setName:@"TIMER0" forVirtualAddress:0x00FA];
-    [file setName:@"TIMER1" forVirtualAddress:0x00FB];
-    [file setName:@"TIMER2" forVirtualAddress:0x00FC];
-    [file setName:@"COUNTER0" forVirtualAddress:0x00FD];
-    [file setName:@"COUNTER1" forVirtualAddress:0x00FE];
-    [file setName:@"COUNTER2" forVirtualAddress:0x00FF];
-    [file setName:@"IPL_ROM" forVirtualAddress:0xFFC0];
+    [file setName:@"CTRLREG" forVirtualAddress:0x00F1 reason:NCReason_Script];
+    [file setName:@"DSPRegisterAddress" forVirtualAddress:0x00F2 reason:NCReason_Script];
+    [file setName:@"DSPRegisterData" forVirtualAddress:0x00F3 reason:NCReason_Script];
+    [file setName:@"PORT0" forVirtualAddress:0x00F4 reason:NCReason_Script];
+    [file setName:@"PORT1" forVirtualAddress:0x00F5 reason:NCReason_Script];
+    [file setName:@"PORT2" forVirtualAddress:0x00F6 reason:NCReason_Script];
+    [file setName:@"PORT3" forVirtualAddress:0x00F7 reason:NCReason_Script];
+    [file setName:@"TIMER0" forVirtualAddress:0x00FA reason:NCReason_Script];
+    [file setName:@"TIMER1" forVirtualAddress:0x00FB reason:NCReason_Script];
+    [file setName:@"TIMER2" forVirtualAddress:0x00FC reason:NCReason_Script];
+    [file setName:@"COUNTER0" forVirtualAddress:0x00FD reason:NCReason_Script];
+    [file setName:@"COUNTER1" forVirtualAddress:0x00FE reason:NCReason_Script];
+    [file setName:@"COUNTER2" forVirtualAddress:0x00FF reason:NCReason_Script];
+    [file setName:@"IPL_ROM" forVirtualAddress:0xFFC0 reason:NCReason_Script];
 
     // Entry points / procedures
     [file addEntryPoint:pc];
     [file addPotentialProcedure:SPC_IPL_ROM_OFFSET];
 
     return(DIS_OK);
+}
+
+- (void)fixupRebasedFile:(NSObject<HPDisassembledFile> *)file withSlide:(int64_t)slide originalFileData:(NSData *)fileData {
+    
 }
 
 - (FileLoaderLoadingStatus)loadDebugData:(NSData *)data forFile:(NSObject<HPDisassembledFile> *)file usingCallback:(FileLoadingCallbackInfo)callback {
